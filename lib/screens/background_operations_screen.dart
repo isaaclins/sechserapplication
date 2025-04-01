@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class BackgroundOperationsScreen extends StatefulWidget {
   const BackgroundOperationsScreen({super.key});
@@ -11,44 +10,18 @@ class BackgroundOperationsScreen extends StatefulWidget {
 
 class _BackgroundOperationsScreenState
     extends State<BackgroundOperationsScreen> {
-  final FlutterLocalNotificationsPlugin _notifications =
-      FlutterLocalNotificationsPlugin();
   bool _isProcessing = false;
   int _progress = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    _initializeNotifications();
-  }
-
-  Future<void> _initializeNotifications() async {
-    const androidSettings =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
-    const iosSettings = DarwinInitializationSettings();
-    const initSettings =
-        InitializationSettings(android: androidSettings, iOS: iosSettings);
-    await _notifications.initialize(initSettings);
-  }
-
   Future<void> _showNotification() async {
-    const androidDetails = AndroidNotificationDetails(
-      'background_channel',
-      'Background Operations',
-      channelDescription: 'Notifications for background operations',
-      importance: Importance.high,
-      priority: Priority.high,
-    );
-    const iosDetails = DarwinNotificationDetails();
-    const details =
-        NotificationDetails(android: androidDetails, iOS: iosDetails);
-
-    await _notifications.show(
-      0,
-      'Hintergrundoperation',
-      'Eine Benachrichtigung wurde gesendet',
-      details,
-    );
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Eine Benachrichtigung wurde gesendet'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
   }
 
   Future<void> _startBackgroundTask() async {
@@ -60,9 +33,11 @@ class _BackgroundOperationsScreenState
     // Simuliere eine Hintergrundoperation
     for (int i = 0; i <= 100; i += 10) {
       await Future.delayed(const Duration(milliseconds: 500));
-      setState(() {
-        _progress = i;
-      });
+      if (mounted) {
+        setState(() {
+          _progress = i;
+        });
+      }
     }
 
     setState(() {

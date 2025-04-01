@@ -30,6 +30,12 @@ class MainActivity: FlutterActivity() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // Fix for stylus handwriting issue
+        System.setProperty("flutter.experimental.inputSystem", "false")
+        super.onCreate(savedInstanceState)
+    }
+
     private fun getBatteryLevel(): Int {
         val batteryStatus: Intent? = IntentFilter(Intent.ACTION_BATTERY_CHANGED).let { ifilter ->
             applicationContext.registerReceiver(null, ifilter)

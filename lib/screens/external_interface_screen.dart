@@ -13,6 +13,98 @@ class ExternalInterfaceScreen extends StatefulWidget {
 class _ExternalInterfaceScreenState extends State<ExternalInterfaceScreen> {
   final TextEditingController _textController = TextEditingController();
   String _readContent = '';
+  String _inputText = '';
+
+  Future<void> _showInputDialog() async {
+    String tempText = _inputText;
+
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Text eingeben'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          tempText += 'A';
+                        });
+                      },
+                      child: const Text('A'),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          tempText += 'B';
+                        });
+                      },
+                      child: const Text('B'),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          tempText += 'C';
+                        });
+                      },
+                      child: const Text('C'),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                width: double.infinity,
+                child: Text(tempText.isEmpty ? 'Keine Eingabe' : tempText),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Abbrechen'),
+            ),
+            TextButton(
+              onPressed: () {
+                if (tempText.isNotEmpty) {
+                  tempText = tempText.substring(0, tempText.length - 1);
+                }
+                setState(() {});
+              },
+              child: const Text('Löschen'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _inputText = tempText;
+                  _textController.text = tempText;
+                });
+                Navigator.pop(context);
+              },
+              child: const Text('Bestätigen'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   Future<void> _writeToFile() async {
     try {
@@ -68,13 +160,34 @@ class _ExternalInterfaceScreenState extends State<ExternalInterfaceScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              controller: _textController,
-              decoration: const InputDecoration(
-                labelText: 'Text zum Schreiben',
-                border: OutlineInputBorder(),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(8),
               ),
-              maxLines: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Text zum Schreiben:',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    _inputText.isEmpty ? 'Keine Eingabe' : _inputText,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 8),
+                  ElevatedButton(
+                    onPressed: _showInputDialog,
+                    child: const Text('Text eingeben'),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(

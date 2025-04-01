@@ -1,0 +1,66 @@
+def PLUGIN = "flutter_local_notifications"
+def ANDROIDX_WARNING = "AndroidX"
+def PLUGIN_ANDROID_SOURCESET_PATH = "android/src/main/"
+def CORE_PLUGIN_SOURCESET_PATH = "../flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-9.9.1/android/src/main/"
+def PLUGIN_SOURCESET_PATH = ""
+
+// The value of PLUGIN_SOURCESET_PATH depends on whether we're in the core plugin or the package
+if (new File(PLUGIN_ANDROID_SOURCESET_PATH).exists()) {
+    PLUGIN_SOURCESET_PATH = PLUGIN_ANDROID_SOURCESET_PATH
+} else if (new File(CORE_PLUGIN_SOURCESET_PATH).exists()) {
+    PLUGIN_SOURCESET_PATH = CORE_PLUGIN_SOURCESET_PATH
+}
+
+group 'com.dexterous.flutterlocalnotifications'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    // Conditional for compatibility with AGP <4.2.
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.dexterous.flutterlocalnotifications'
+    }
+
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 16
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dependencies {
+        implementation 'androidx.core:core:1.12.0'
+        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+        implementation 'androidx.annotation:annotation:1.7.0'
+        implementation 'com.google.code.gson:gson:2.9.0'
+        implementation 'com.google.guava:guava:31.1-android'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+} 
