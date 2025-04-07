@@ -37,11 +37,27 @@ transition: fade-out
 ---
 
 # Problem with modern Todo-Apps
+<v-click>
 
 - **Over-Engineered** 
+
+</v-click>
+<v-click>
+
 - **Cloud-Dependent** 
+
+</v-click>
+<v-click>
+
 - **Paywalls** 
+
+</v-click>
+<v-click>
+
 - **Data Blackbox** 
+
+</v-click>
+
 
 <br>
 <br>
