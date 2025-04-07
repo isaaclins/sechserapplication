@@ -1,20 +1,27 @@
 name: todoapp
-description: "A new Flutter project."
+description: A simple todo application using Flutter and Cupertino widgets.
 publish_to: "none"
-version: 0.1.0
+version: 1.0.0+1
 
 environment:
-  sdk: ^3.8.0-171.0.dev
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  shadcn_flutter: ^0.0.34
+  cupertino_icons: ^1.0.2
+  provider: ^6.0.5
+  uuid: ^3.0.7
+  shared_preferences: ^2.2.2
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - sprites/
+    - sprites/animation/
