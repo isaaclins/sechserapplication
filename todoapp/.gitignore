@@ -44,7 +44,11 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /commit.bat
+
+# Flutter/Dart/Pub related
 /linux
 /macos
 /web
 /windows
+/ios
+/android
