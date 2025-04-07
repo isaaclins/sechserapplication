@@ -1,3 +1,47 @@
+# 1 Rahmenbedingungen
+
+Die zu entwickelnde App soll eine gewisse Komplexität aufweisen. Damit die Rahmenbedingungen für alle gleich oder möglichst ähnlich sind und dennoch zu den individuellen Ideen passen, sollen die einzelnen Kriterien pro App und Idee definiert werden.
+
+Aus den unterhalb aufgelisteten Kriterien müssen so viele durch ankreuzen ausgewählt werden, damit mindestens zehn Punkte erreicht werden. Die Punkte werden nur einmal vergeben.
+
+| Kriterium                                                                     | Punkte | Wahl |
+| ----------------------------------------------------------------------------- | ------ | ---- |
+| Sensor auslesen und dessen Daten verarbeiten                                  | 5      |      |
+| Aktuator verwenden                                                            | 4      |      |
+| Kommunikation über Bluetooth, NFC, WiFi-Direct oder AdHoc-WiFi                | 6      |      |
+| Externe Schnittstelle lesen                                                   | 2      |      |
+| Externe Schnittstelle schreiben                                               | 3      |      |
+| Mehr als eine Aktivität oder View verwenden                                   | 1      |      |
+| Kommunikation zwischen zwei Aktivitäten oder Views                            | 1      |      |
+| Verwenden einer persistenten, lokalen Datenablage                             | 2      |      |
+| Verwenden von Hintergrundoperationen (z. B. Services, Notifications, ...)     | 4      |      |
+| Interaktion mit Systemapplikationen (z. B. Kamera, SMS, …)                    | 2      |      |
+| Verwenden von selbsterstellten Animationen (z. B. Sprites, Pfadverfolgung, …) | 2      |      |
+| Plattformspezifische APIs: Widgets, Badges, andere Integrationen              | 6      |      |
+| Spezifisches Icon wird verwendet                                              | 1      |      |
+| **Erreichte Punkte**                                                          |        |      |
+
+## Bewertung:
+
+### ✅ Verwenden einer persistenten, lokalen Datenablage (2 Punkte)
+- Implementiert in StorageService mit SharedPreferences
+- Speichert Tasks und Einstellungen lokal
+
+### ✅ Mehr als eine Aktivität oder View verwenden (1 Punkt)
+- Hat mehrere Screens (HomeScreen, etc.)
+- Verwendet Provider für State Management
+
+### ✅ Kommunikation zwischen zwei Aktivitäten oder Views (1 Punkt)
+- Verwendet Provider für Kommunikation zwischen Views
+- TaskProvider und SettingsProvider ermöglichen Datenfluss
+
+### ✅ Verwenden von Hintergrundoperationen (4 Punkte)
+- Implementiert asynchrone Operationen für Datenpersistenz
+- Verwendet Future und async/await für Hintergrundoperationen
+
+### ✅ Spezifisches Icon wird verwendet (1 Punkt)
+- App hat ein eigenes Icon (standardmäßig in Flutter)
+
 # 3 Bewertungsraster
 
 Die einzelnen Kriterien mit den Gütestufen beschreiben, wie Ihre Leistung bei dieser Projektarbeit bewertet wird.
