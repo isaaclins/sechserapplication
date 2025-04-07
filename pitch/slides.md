@@ -3,7 +3,6 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
 title: Welcome to Slidev
 info: |
@@ -25,46 +24,29 @@ mdc: true
 #  ogImage: https://cover.sli.dev
 ---
 
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
+# Pitch Isaac
 
 <div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
     <carbon:logo-github />
   </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
 ---
 transition: fade-out
 ---
 
-# What is Slidev?
+# Problem with modern Todo-Apps
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+- **Over-Engineered** 
+- **Cloud-Dependent** 
+- **Paywalls** 
+- **Data Blackbox** 
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+###### Motivation hinter der Idee. Weshalb braucht es diese App?
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -92,7 +74,7 @@ transition: slide-up
 level: 2
 ---
 
-# Navigation
+# Soluition
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
 
