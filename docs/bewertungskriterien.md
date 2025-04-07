@@ -24,22 +24,27 @@ Aus den unterhalb aufgelisteten Kriterien müssen so viele durch ankreuzen ausge
 ## Bewertung:
 
 ### ✅ Verwenden einer persistenten, lokalen Datenablage (2 Punkte)
+
 - Implementiert in StorageService mit SharedPreferences
 - Speichert Tasks und Einstellungen lokal
 
 ### ✅ Mehr als eine Aktivität oder View verwenden (1 Punkt)
+
 - Hat mehrere Screens (HomeScreen, etc.)
 - Verwendet Provider für State Management
 
 ### ✅ Kommunikation zwischen zwei Aktivitäten oder Views (1 Punkt)
+
 - Verwendet Provider für Kommunikation zwischen Views
 - TaskProvider und SettingsProvider ermöglichen Datenfluss
 
 ### ✅ Verwenden von Hintergrundoperationen (4 Punkte)
+
 - Implementiert asynchrone Operationen für Datenpersistenz
 - Verwendet Future und async/await für Hintergrundoperationen
 
 ### ✅ Spezifisches Icon wird verwendet (1 Punkt)
+
 - App hat ein eigenes Icon (standardmäßig in Flutter)
 
 # 3 Bewertungsraster

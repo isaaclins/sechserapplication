@@ -110,33 +110,88 @@ level: 2
 
 ---
 
-# Prequisites
+# Prerequisites
 
-- Has to run everything locally
+- Everything has to be local
 
-- has to deploy to all platforms
+- Deployable on all Platforms
 
 - minimalistic
 
-<br>
-<hr>
-<br>
-<br>
+- Intuitive 
 
-#### Technical prequisites
+---
 
-Externe Schnittstelle lesen
+# Technical Prerequisites
 
-Externe Schnittstelle schreiben
 
-Mehr als eine Aktivität oder View verwenden
 
-Kommunikation zwischen zwei Aktivitäten oder Views
-<br>
-<br>
-<br>
-<br>
-<br>
+<v-click>
+
+####  ✅ Using persistent, local data storage (2 points)
+
+</v-click>
+
+
+<v-click>
+
+###### the tasks
+
+</v-click>
+
+
+<v-click>
+
+####  ✅ Using more than one activity or view (1 point)
+
+</v-click>
+
+
+<v-click>
+
+###### the tabs
+
+</v-click>
+
+<v-click>
+
+####  ✅ Communication between two activities or views (1 point
+
+</v-click>
+
+<v-click>
+
+###### mark as done -> moves to done
+
+</v-click>
+
+<v-click>
+
+####  ✅ Using background operations (4 points)
+
+</v-click>
+
+<v-click>
+
+###### 
+
+</v-click>
+
+<v-click>
+
+####  ✅ Custom icon is used (1 point)
+
+</v-click>
+
+#
+
+<v-click>
+
+####  ✅ Using custom animations (e.g. sprites, path tracking, ...) (2 points)
+
+</v-click>
+
+
 
 ###### Erwähnung der Rahmenbedingungen
 
