@@ -61,13 +61,17 @@ transition: fade-out
 
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ###### Motivation hinter der Idee. Weshalb braucht es diese App?
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
 
 <style>
 h1 {
@@ -81,10 +85,6 @@ h1 {
 }
 </style>
 
-<!--
-Here is another comment.
--->
-
 ---
 transition: slide-up
 level: 2
@@ -92,25 +92,21 @@ level: 2
 
 # Soluition
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+| **Problems**                             | **Our Solution**                                 |
+| ---------------------------------------- | ------------------------------------------------ |
+| <v-click> **Over-Engineered** </v-click> | <v-click> Simplify to core components </v-click> |
+| <v-click> **Cloud-Dependent** </v-click> | <v-click> Everything is local </v-click> |
+| <v-click> **Paywalls** </v-click>        | <v-click> NPO</v-click>              |
+| <v-click> **Data Blackbox** </v-click>   | <v-click> No data is collected </v-click>                  |
 
-## Keyboard Shortcuts
 
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+###### Motivation hinter der Idee. Weshalb braucht es diese App?
 
 ---
 layout: two-cols
